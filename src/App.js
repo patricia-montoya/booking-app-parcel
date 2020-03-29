@@ -1,13 +1,20 @@
 import React from 'react';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Hero from './components/Hero';
+import { today } from './data/data';
 
 const App = () => {
+  const filters = {
+    dateFrom: today,
+    dateTo: new Date(today.valueOf() + 86400000),
+    country: '',
+    price: 0,
+    rooms: 0,
+  };
+
   return (
-    <h1 className="title is-1">
-      <FontAwesomeIcon icon={faHome} />
-      ¡Holi!
-    </h1>
+    <div>
+      <Hero filters={filters} />
+    </div>
   );
 };
 

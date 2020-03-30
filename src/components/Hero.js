@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Hero = () => {
+const Hero = ({ filters }) => {
+  console.log(filters);
   return (
     <section className="hero is-primary">
       <div className="hero-body">
         <div className="container">
           <h1 className="title">Hoteles</h1>
           <h2 className="subtitle">
-            desde el
-            <strong>date, DD de mmmm de AAAA</strong>
+            <strong>{`${filters.dateFrom}`}</strong>
             hasta el
-            <strong>dddd, DD de mmmm de AAAA</strong>
+            <strong>{`${filters.dateTo} PENDIENTE!!!`}</strong>
           </h2>
         </div>
       </div>

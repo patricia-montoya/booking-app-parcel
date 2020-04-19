@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Hero = ({ filters }) => {
-  console.log(filters);
   return (
     <section className="hero is-primary">
       <div className="hero-body">

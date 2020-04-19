@@ -4,7 +4,8 @@ import 'bulma';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Hero from './components/Hero';
 import Filters from './components/Filters';
-import { today, hotelsData } from './data/data';
+import Hotels from './components/Hotels';
+import { today, hotelsData } from './data';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends React.Component {
         price: '',
         rooms: '',
       },
+      hotels: hotelsData,
     };
 
     this.handleFilterChange = this.handleFilterChange.bind(this);
@@ -30,11 +32,12 @@ class App extends React.Component {
   }
 
   render() {
-    const { filters } = this.state;
+    const { filters, hotels } = this.state;
     return (
       <div>
         <Hero filters={filters} />
         <Filters filters={filters} onFilterChange={this.handleFilterChange} />
+        <Hotels data={hotels} />
       </div>
     );
   }

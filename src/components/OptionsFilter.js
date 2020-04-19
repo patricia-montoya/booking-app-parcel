@@ -12,7 +12,8 @@ class DateFilter extends React.Component {
   }
 
   render() {
-    const { options, selected, icon } = this.props;
+    const { options, selected, icon, name } = this.props;
+    const iconText = `fas fa-${icon}`;
 
     return (
       <div className="field">
@@ -21,14 +22,18 @@ class DateFilter extends React.Component {
             <select
               style={{ width: '100%' }}
               onChange={this.handleOptionChange}
+              name={name}
+              value={selected}
             >
               {options.map((option) => (
-                <option value={option.value}>{option.name}</option>
+                <option key={option.name} value={option.value}>
+                  {option.name}
+                </option>
               ))}
             </select>
           </div>
           <div className="icon is-small is-left">
-            <i className="fas"></i>
+            <i className={iconText}></i>
           </div>
         </div>
       </div>

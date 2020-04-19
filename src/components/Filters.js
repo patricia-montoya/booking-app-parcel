@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import DateFilter from './DateFilter';
 import OptionsFilter from './OptionsFilter';
 
@@ -12,17 +13,24 @@ class Filters extends React.Component {
 
   handleDateChange(event) {
     const { filters, onFilterChange } = this.props;
+    const { name, value } = event.target;
+    const payload = filters;
 
-    let payload = filters;
-    payload[event.target.name] = event.target.value;
-    onFilterChange(payload);
+    payload[name] = moment(value).isValid() ? moment(value).toDate() : '';
+
+    if (moment(payload.dateTo).isSameOrBefore(payload.dateFrom)) {
+      alert('La fecha de salida debe ser posterior a la fecha de ingreso');
+    } else {
+      onFilterChange(payload);
+    }
   }
 
   handleOptionChange(event) {
     const { filters, onFilterChange } = this.props;
+    const { name, value } = event.target;
 
-    let payload = filters;
-    payload[event.target.name] = event.target.value;
+    const payload = filters;
+    payload[name] = value;
     onFilterChange(payload);
   }
 

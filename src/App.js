@@ -23,6 +23,7 @@ class App extends React.Component {
     };
 
     this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.filtersHotel = this.filtersHotel.bind(this);
   }
 
   handleFilterChange(payload) {
@@ -31,13 +32,31 @@ class App extends React.Component {
     });
   }
 
+  filtersHotel(hotel) {
+    const { filters } = this.state;
+    if (
+      (filters.dateFrom &&
+        moment(filters.dateFrom).isBefore(hotel.availabilityFrom)) ||
+      (filters.dateTo &&
+        moment(filters.dateTo).isAfter(hotel.availabilityTo)) ||
+      (filters.country && filters.country !== hotel.country) ||
+      (filters.price && filters.price !== hotel.price) ||
+      (filters.rooms === 10 && hotel.rooms > 10) ||
+      (filters.rooms === 20 && (hotel.rooms <= 10 || hotel.rooms > 20)) ||
+      (filters.rooms === 30 && hotel.rooms <= 20)
+    )
+      return false;
+
+    return true;
+  }
+
   render() {
     const { filters, hotels } = this.state;
     return (
       <div>
         <Hero filters={filters} />
         <Filters filters={filters} onFilterChange={this.handleFilterChange} />
-        <Hotels data={hotels} />
+        <Hotels data={hotels.filter(this.filtersHotel)} />
       </div>
     );
   }

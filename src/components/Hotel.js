@@ -7,6 +7,7 @@ const Hotel = (props) => {
       <div className="card-image">
         <figure className="image is-4by3">
           <img src={data.photo} alt={data.name} />
+          <h1>{data.photo}</h1>
         </figure>
       </div>
       <div className="card-content">

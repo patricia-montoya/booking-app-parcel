@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 class DateFilter extends React.Component {
   constructor(props) {
@@ -12,9 +13,9 @@ class DateFilter extends React.Component {
   }
 
   render() {
-    const { date, icon } = this.props;
+    const { date, icon, name } = this.props;
 
-    const iconText = `fas ${icon}`;
+    const iconText = `fas fa-${icon}`;
 
     return (
       <div className="field">
@@ -23,6 +24,10 @@ class DateFilter extends React.Component {
             className="input"
             type="date"
             onChange={this.handleDateChange}
+            name={name}
+            value={
+              moment(date).isValid() ? moment(date).format('YYYY-MM-DD') : ''
+            }
           />
           <span className="icon is-small is-left">
             <i className={iconText}></i>

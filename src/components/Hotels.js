@@ -10,9 +10,6 @@ class Hotels extends React.Component {
 
   render() {
     const { data } = this.props;
-    {
-      console.log(data);
-    }
     return data ? (
       <section className="section" style={{ marginTop: '3em' }}>
         <div className="container">

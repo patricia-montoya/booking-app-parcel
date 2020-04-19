@@ -1,9 +1,10 @@
 import React from 'react';
+import moment from 'moment';
 import 'bulma';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Hero from './components/Hero';
 import Filters from './components/Filters';
-import { today } from './data/data';
+import { today, hotelsData } from './data/data';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,10 +15,18 @@ class App extends React.Component {
         dateFrom: today,
         dateTo: new Date(today.valueOf() + 86400000),
         country: '',
-        price: 0,
-        rooms: 0,
+        price: '',
+        rooms: '',
       },
     };
+
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+  }
+
+  handleFilterChange(payload) {
+    this.setState({
+      filters: payload,
+    });
   }
 
   render() {
@@ -25,7 +34,7 @@ class App extends React.Component {
     return (
       <div>
         <Hero filters={filters} />
-        <Filters filters={filters} />
+        <Filters filters={filters} onFilterChange={this.handleFilterChange} />
       </div>
     );
   }

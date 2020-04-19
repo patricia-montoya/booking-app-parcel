@@ -1,4 +1,6 @@
 import React from 'react';
+import DateFilter from './DateFilter';
+import OptionsFilter from './OptionsFilter';
 
 const Filters = (props) => {
   return (

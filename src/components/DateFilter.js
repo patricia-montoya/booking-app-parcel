@@ -1,12 +1,14 @@
 import React from 'react';
 
-const DateFilter = () => {
+const DateFilter = ({ date, icon }) => {
+  const iconText = `fas ${icon}`;
+
   return (
     <div className="field">
       <div className="control has-icons-left">
         <input className="input" type="date" />
         <span className="icon is-small is-left">
-          <i className="fas"></i>
+          <i className={iconText}></i>
         </span>
       </div>
     </div>

@@ -3,8 +3,8 @@ import moment from 'moment';
 import 'bulma';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Hero from './components/Hero';
-import Filters from './components/Filters';
-import Hotels from './components/Hotels';
+import Filters from './components/Filters/Filters';
+import Hotels from './components/Hotel/Hotels';
 import { today, hotelsData } from './data';
 
 class App extends React.Component {

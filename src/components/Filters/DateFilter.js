@@ -30,7 +30,7 @@ class DateFilter extends React.Component {
             }
           />
           <span className="icon is-small is-left">
-            <i className={iconText}></i>
+            <i className={iconText} />
           </span>
         </div>
       </div>

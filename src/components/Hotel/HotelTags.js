@@ -9,7 +9,7 @@ const HotelTags = ({ city, country, rooms }) => {
       <div className="control">
         <div className="tags has-addons">
           <span className="tag is-medium is-info">
-            <i className="fas fa-map-marker"></i>
+            <i className="fas fa-map-marker" />
           </span>
           <span className="tag is-medium">{`${city}, ${country}`}</span>
         </div>
@@ -17,7 +17,7 @@ const HotelTags = ({ city, country, rooms }) => {
       <div className="control">
         <div className="tags has-addons">
           <span className="tag is-medium is-info">
-            <i className="fas fa-bed"></i>
+            <i className="fas fa-bed" />
           </span>
           <span className="tag is-medium">{`${rooms} Habitaciones`}</span>
         </div>

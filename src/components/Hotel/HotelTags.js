@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const HotelTags = ({ city, country, rooms }) => {
   return (
@@ -40,6 +41,12 @@ const HotelTags = ({ city, country, rooms }) => {
       </div>
     </div>
   );
+};
+
+HotelTags.propTypes = {
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  rooms: PropTypes.number.isRequired,
 };
 
 export default HotelTags;

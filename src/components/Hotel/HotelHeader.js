@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const HotelHeader = ({ source, AltText }) => {
   return (
@@ -9,6 +10,11 @@ const HotelHeader = ({ source, AltText }) => {
       </figure>
     </div>
   );
+};
+
+HotelHeader.propTypes = {
+  source: PropTypes.string.isRequired,
+  AltText: PropTypes.string.isRequired,
 };
 
 export default HotelHeader;

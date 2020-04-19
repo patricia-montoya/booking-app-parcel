@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Hotel from './Hotel';
 
 const Hotels = ({ data }) => {
@@ -22,6 +23,10 @@ const Hotels = ({ data }) => {
       </div>
     </article>
   );
+};
+
+Hotels.propTypes = {
+  data: PropTypes.shape().isRequired,
 };
 
 export default Hotels;

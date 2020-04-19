@@ -1,4 +1,6 @@
+/* eslint-disable radix */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const priceToWords = (priceStr) => {
   const price = parseInt(priceStr);
@@ -41,7 +43,6 @@ const Hero = ({ filters }) => {
     day: 'numeric',
   };
 
-  console.log(filters);
   return (
     <section className="hero is-primary">
       <div className="hero-body">
@@ -69,4 +70,7 @@ const Hero = ({ filters }) => {
   );
 };
 
+Hero.propTypes = {
+  filters: PropTypes.shape().isRequired,
+};
 export default Hero;

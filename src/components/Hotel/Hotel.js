@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import HotelHeader from './HotelHeader';
 import HotelContent from './HotelContent';
 import HotelFooter from './HotelFooter';
@@ -18,6 +19,10 @@ const Hotel = (props) => {
       <HotelFooter />
     </div>
   );
+};
+
+Hotel.propTypes = {
+  data: PropTypes.shape().isRequired,
 };
 
 export default Hotel;

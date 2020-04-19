@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class DateFilter extends React.Component {
+class OptionsFilter extends React.Component {
   constructor(props) {
     super(props);
 
@@ -8,7 +9,8 @@ class DateFilter extends React.Component {
   }
 
   handleOptionChange(event) {
-    this.props.onOptionChange(event);
+    const { onOptionChange } = this.props;
+    onOptionChange(event);
   }
 
   render() {
@@ -41,4 +43,12 @@ class DateFilter extends React.Component {
   }
 }
 
-export default DateFilter;
+OptionsFilter.propTypes = {
+  onOptionChange: PropTypes.func.isRequired,
+  options: PropTypes.node.isRequired,
+  selected: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+export default OptionsFilter;

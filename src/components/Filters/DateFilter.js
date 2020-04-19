@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 class DateFilter extends React.Component {
@@ -9,7 +10,8 @@ class DateFilter extends React.Component {
   }
 
   handleDateChange(event) {
-    this.props.onDateChange(event);
+    const { onDateChange } = this.props;
+    onDateChange(event);
   }
 
   render() {
@@ -37,5 +39,12 @@ class DateFilter extends React.Component {
     );
   }
 }
+
+DateFilter.propTypes = {
+  onDateChange: PropTypes.func.isRequired,
+  date: PropTypes.node.isRequired,
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 export default DateFilter;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import DateFilter from './DateFilter';
 import OptionsFilter from './OptionsFilter';
@@ -102,5 +103,10 @@ class Filters extends React.Component {
     );
   }
 }
+
+Filters.propTypes = {
+  filters: PropTypes.shape().isRequired,
+  onFilterChange: PropTypes.func.isRequired,
+};
 
 export default Filters;

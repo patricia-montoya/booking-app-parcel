@@ -40,10 +40,10 @@ class App extends React.Component {
       (filters.dateTo &&
         moment(filters.dateTo).isAfter(hotel.availabilityTo)) ||
       (filters.country && filters.country !== hotel.country) ||
-      (filters.price && filters.price !== hotel.price) ||
-      (filters.rooms === 10 && hotel.rooms > 10) ||
-      (filters.rooms === 20 && (hotel.rooms <= 10 || hotel.rooms > 20)) ||
-      (filters.rooms === 30 && hotel.rooms <= 20)
+      (+filters.price && +filters.price !== hotel.price) ||
+      (+filters.rooms === 10 && hotel.rooms > 10) ||
+      (+filters.rooms === 20 && (hotel.rooms <= 10 || hotel.rooms > 20)) ||
+      (+filters.rooms === 30 && hotel.rooms <= 20)
     )
       return false;
 

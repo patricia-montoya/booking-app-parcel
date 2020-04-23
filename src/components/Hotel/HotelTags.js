@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HotelTags = ({ city, country, rooms }) => {
+const HotelTags = ({ city, country, rooms, price }) => {
   return (
     <div
       className="field is-grouped is-grouped-multiline"
@@ -26,16 +26,16 @@ const HotelTags = ({ city, country, rooms }) => {
       <div className="control">
         <div className="tags">
           <span className="tag is-medium is-info">
-            <i className="fas fa-dollar-sign" style={{ margin: '0 .125em' }} />
-            <i className="fas fa-dollar-sign" style={{ margin: '0 .125em' }} />
-            <i
-              className="fas fa-dollar-sign"
-              style={{ margin: '0 .125em', opacity: '.25' }}
-            />
-            <i
-              className="fas fa-dollar-sign"
-              style={{ margin: '0 .125em', opacity: '.25' }}
-            />
+            {[1, 2, 3, 4].map((value) => (
+              <i
+                key={value}
+                className="fas fa-dollar-sign"
+                style={{
+                  margin: '0 .125em',
+                  opacity: value > price ? '.25' : '1',
+                }}
+              />
+            ))}
           </span>
         </div>
       </div>
@@ -47,6 +47,7 @@ HotelTags.propTypes = {
   city: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   rooms: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default HotelTags;

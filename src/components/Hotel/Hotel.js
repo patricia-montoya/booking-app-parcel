@@ -15,6 +15,7 @@ const Hotel = (props) => {
         city={data.city}
         country={data.country}
         rooms={data.rooms}
+        price={data.price}
       />
       <HotelFooter />
     </div>

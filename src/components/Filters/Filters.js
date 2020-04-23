@@ -29,7 +29,6 @@ class Filters extends React.Component {
   handleOptionChange(event) {
     const { filters, onFilterChange } = this.props;
     const { name, value } = event.target;
-
     const payload = filters;
     payload[name] = value;
     onFilterChange(payload);
@@ -58,7 +57,7 @@ class Filters extends React.Component {
         <div className="navbar-item">
           <OptionsFilter
             options={[
-              { value: undefined, name: 'Todos los países' },
+              { value: '', name: 'Todos los países' },
               { value: 'Argentina', name: 'Argentina' },
               { value: 'Brasil', name: 'Brasil' },
               { value: 'Chile', name: 'Chile' },
@@ -73,7 +72,7 @@ class Filters extends React.Component {
         <div className="navbar-item">
           <OptionsFilter
             options={[
-              { value: undefined, name: 'Cualquier precio' },
+              { value: '', name: 'Cualquier precio' },
               { value: 1, name: '$' },
               { value: 2, name: '$$' },
               { value: 3, name: '$$$' },
@@ -88,7 +87,7 @@ class Filters extends React.Component {
         <div className="navbar-item">
           <OptionsFilter
             options={[
-              { value: undefined, name: 'Cualquier tamaño' },
+              { value: '', name: 'Cualquier tamaño' },
               { value: 10, name: 'Hotel pequeño' },
               { value: 20, name: 'Hotel mediano' },
               { value: 30, name: 'Hotel grande' },
